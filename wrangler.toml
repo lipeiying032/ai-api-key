@@ -1,4 +1,4 @@
-name = "llm-gateway"
+name = "ai-api-key"
 main = "index.tsx"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
@@ -9,7 +9,7 @@ compatibility_flags = ["nodejs_compat"]
 [[d1_databases]]
 binding      = "DB"          # 代码中用 env.DB 访问，不能改
 database_name = "llm_db"
-database_id  = "your-d1-database-id-here"   # ← 替换这里
+database_id  = "9c02daaa-731c-441b-9062-fd4f9cbcde17"   # ← 替换这里
 
 # ── Secrets（敏感变量，不要写在这里）─────────────────────
 # 以下三个变量必须通过 wrangler secret put 命令或
