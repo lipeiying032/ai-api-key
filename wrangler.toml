@@ -1,0 +1,30 @@
+name = "llm-gateway"
+main = "index.tsx"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# ── D1 数据库绑定 ──────────────────────────────────────────
+# 部署前请先在 Cloudflare Dashboard 创建 D1 数据库，
+# 然后将下方的 database_id 替换为你自己的真实 ID。
+[[d1_databases]]
+binding      = "DB"          # 代码中用 env.DB 访问，不能改
+database_name = "llm_db"
+database_id  = "your-d1-database-id-here"   # ← 替换这里
+
+# ── Secrets（敏感变量，不要写在这里）─────────────────────
+# 以下三个变量必须通过 wrangler secret put 命令或
+# Cloudflare Dashboard → Worker → Settings → Variables 设置：
+#
+#   wrangler secret put ADMIN_PASSWORD
+#   wrangler secret put MASTER_KEY
+#   wrangler secret put SESSION_SECRET   (可选)
+#
+# 切勿在此文件中明文填写！
+
+# ── 构建配置 ──────────────────────────────────────────────
+[build]
+command = ""          # Worker 不需要构建步骤，wrangler 直接编译 TS
+
+# ── 本地开发 ──────────────────────────────────────────────
+# 运行: wrangler dev
+# 访问: http://localhost:8787
