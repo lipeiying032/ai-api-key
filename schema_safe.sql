@@ -1,6 +1,6 @@
 -- Unified LLM Gateway v3.1.0 - Safe Schema (Idempotent)
 -- 可多次执行，不会破坏已有数据
-
+ 
 CREATE TABLE IF NOT EXISTS providers (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     name        TEXT NOT NULL UNIQUE,
